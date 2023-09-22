@@ -1,0 +1,10 @@
+.whole {
+    padding: 20px;
+    width: 100%;
+}
+
+.allProductsList {
+    background: #fff;
+    width: 100%;
+    min-height: 80vh;
+}
