@@ -1,0 +1,32 @@
+.Row {
+    display: grid;
+    width: 100%;
+    justify-content: center;
+    background-color: #fff;
+    outline: 1px solid #e7e8e9;
+    padding: 7px 0;
+    align-items: center; 
+    grid-template-columns: .4fr .5fr .6fr .5fr .5fr .5fr;
+   
+}
+
+.Row div h6 {
+    width: 70px;
+    text-align: center;
+}
+
+.Row div h4 {
+    font-weight: 400;
+}
+
+.Row div {
+    /* border: 2px solid blue; */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+.prodImg {
+    object-fit: cover;
+}

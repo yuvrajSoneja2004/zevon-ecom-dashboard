@@ -6,9 +6,6 @@ import {FaUserFriends, FaCartArrowDown, FaUserCheck} from 'react-icons/fa';
 import {HiStatusOnline} from 'react-icons/hi'
 export default function Home() {
 
-  
-
-
 
   return (
    <div className={styles.whole}>
