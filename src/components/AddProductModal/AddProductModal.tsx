@@ -61,7 +61,21 @@ const AddProductModal = () => {
             setIsLoading(true);
             try {
                 // Continue
-                // const {data} = await axiosInstance.post("")
+                const {data} = await axiosInstance.post("/addProduct", {
+                  name: inputs.name,
+                  price: inputs.price,
+                  company: inputs.company,
+                  category: inputs.category,
+                  stocks: inputs.stocks,
+                  replacementDays: inputs.replacement,
+                  description: inputs.description,
+                  isTrending: isTrending,
+                  isBestSeller: isBestSeller,
+                  isNew: isNew,
+                  isOnSale: isOnSale,
+                  images: selectedImage
+                });
+                console.log(data, "from client fetch")
             } catch (error) {
                 
             }
