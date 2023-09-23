@@ -3,6 +3,10 @@ import React, { FC, useEffect, useState } from 'react'
 import S from './products.module.css';
 import ProductDetailsRow from '@/components/ProductDetailsRow/ProductDetailsRow';
 import axios from 'axios';
+import { FaPlus } from 'react-icons/fa';
+import {ImCancelCircle} from 'react-icons/im';
+import AddProductModal from '@/components/AddProductModal/AddProductModal';
+import { axiosInstance } from '@/utils/axiosInstance';
 
 
  const page:FC = () => {
@@ -11,21 +15,27 @@ import axios from 'axios';
   
 
   const [data , setData] = useState([]);
-  const [isLoading , setIsLoading] = useState<PossibleLoading>(false)
+  const [isLoading , setIsLoading] = useState<PossibleLoading>(false);
+  const [isVisible , setIsVisible] = useState<PossibleLoading>(false);
 
   const getData = async () => {
     setIsLoading(true);
     try {
-      const {data} = await axios.get("https://purple-anemone-veil.cyclic.app/asending");
+      const {data} = await axiosInstance.get("/asending");
     setData(data);
   } catch (error) {
-    
+    console.log(error)
   }
   finally {
       setIsLoading(false);
 
     }
     
+
+  }
+
+  const toggleBtn = () => {
+    setIsVisible(!isVisible);
   }
 
 
@@ -37,7 +47,9 @@ import axios from 'axios';
   return (
    <>
       <div className={S.whole}>
-      <button>ADD NEW PRODUCT</button>
+      <button className={S.addBtn} onClick={toggleBtn}> {isVisible ? <ImCancelCircle /> : <FaPlus />}{isVisible ? "CANCEL PRODUCT": "ADD PRODUCT"}</button>
+      {isVisible ? <AddProductModal /> : null }
+      
       <div className={S.allProductsList}>
           <h3 style={{marginBottom: '20px'}}>All Products Overview</h3>
         

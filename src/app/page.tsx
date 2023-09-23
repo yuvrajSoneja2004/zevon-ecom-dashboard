@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styles from './page.module.css'
 import DetailsCard from '@/components/DetailsCard/DetailsCard'
 import {FaUserFriends, FaCartArrowDown, FaUserCheck} from 'react-icons/fa';
-import {HiStatusOnline} from 'react-icons/hi'
+import {HiStatusOnline} from 'react-icons/hi';
 export default function Home() {
 
 

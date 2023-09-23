@@ -1,0 +1,76 @@
+.whole {
+    width: 100%;
+    min-height: 400px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    outline: 1px solid rgb(188, 188, 188);
+    margin: 30px 0;
+}
+
+.whole form label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.whole form input {
+    width: 100%;
+    border: none;
+    font-size: 17px;
+    padding: 6px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.whole form input:focus {
+    outline: 2px solid #1a2332;
+
+}
+
+
+.whole form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.fieldDiv {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.desc {
+    width: 100%;
+    border: none;
+    font-size: 17px;
+    padding: 6px;
+    border-radius: 5px;
+}
+
+.boolInputs {
+    display: flex;
+    align-items: center;
+}
+
+.boolInputs div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.boolInputs div label {
+    width: 100%;
+    font-size: 12px;
+}
+
+.imgPreview {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+
+}
+.imgPreview img {
+    object-fit: cover;
+}
