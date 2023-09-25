@@ -5,11 +5,11 @@ import S from './styles.module.css'
 
 interface DetailsCardProps {
   icon?: React.ReactElement,
-  firstData?: string,
-  title?: string
+  firstData?: number,
+  title?: string,
 }
 
-const DetailsCard:FC<DetailsCardProps> = ({icon, firstData, title}) => {
+const DetailsCard:FC<DetailsCardProps> = ({icon, firstData, title }) => {
 
 
 

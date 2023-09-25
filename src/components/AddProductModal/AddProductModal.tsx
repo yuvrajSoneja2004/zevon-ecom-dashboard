@@ -60,8 +60,7 @@ const AddProductModal = () => {
             event.preventDefault();
             setIsLoading(true);
             try {
-                // Continue
-                const {data} = await axiosInstance.post("/addProduct", {
+                const { data } = await axiosInstance.post("/addProduct", {
                   name: inputs.name,
                   price: inputs.price,
                   company: inputs.company,
