@@ -1,12 +1,13 @@
 "use client"
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
 import SiteLogo from '../assets/logo.png';
-import {BsGrid1X2, BsPCircleFill, BsPeople} from 'react-icons/bs';
+import {BsCartCheck, BsChatLeftText, BsGrid1X2, BsPCircleFill, BsPeople} from 'react-icons/bs';
 import Link from 'next/link';
 
 function Sidebar() {
+    const [isUnsupported , setIsUnsupported] = useState(false);
 
     const dashOptions = [
         {
@@ -20,12 +21,31 @@ function Sidebar() {
             icon:  <BsPCircleFill  fill="#fff"/>
         },
         {
-            title: "Visitors",
-            path: "/visitors",
-            icon:  <BsPeople  fill="#fff"/>
+            title: "Orders",
+            path: "/orders",
+            icon:  <BsCartCheck  fill="#fff"/>
         },
-    ]
+        {
+            title: "Discussions",
+            path: "/discussions",
+            icon:  <BsChatLeftText  fill="#fff"/>
+        },
+    ];
 
+    const handleResize = () => {
+        console.log(isUnsupported);
+          if(window.innerWidth <= 655){
+            setIsUnsupported(true)
+          } else {
+            setIsUnsupported(false);
+          }
+      }
+    
+      useEffect(() => {
+        window.addEventListener("resize" , handleResize)
+    } , [isUnsupported])
+
+    if(window.innerWidth <= 654) return;
 
 
   return (
